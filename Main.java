@@ -1,7 +1,9 @@
+import java.util.*;
 public class Main
 {
     public static void main(String[] args) throws Exception 
     {
+        Scanner in = new Scanner(System.in);
         int numVertex = 9;
         
         Graph map = new Graph(numVertex);
@@ -29,5 +31,15 @@ public class Main
         System.out.println();
         System.out.println(map.getMoney());
         System.out.println(map.getKeuntungan());
+        System.out.print("Adakah kendala pada perjalanan? (Ya/Tidak) ");
+            String check = in.nextLine().toLowerCase();
+            if(check.equals("ya")){
+                System.out.println("Kendala pada jalan apa? ");
+                System.out.print("Dari: ");
+                char from = in.next().charAt(0);
+                System.out.print("Menuju: ");
+                char to = in.next().charAt(0);
+                map.otherRoute(from, to, 'A', 'D');
+            }
     }
 }
