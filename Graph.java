@@ -75,6 +75,16 @@ public void addEdge(int from, int to,int len)
              return distance[dst];
              
 }
+        
+        public void otherRoute(int a, int b, int src, int dst){
+        System.out.println("Oops! Jalan tidak dapat dilalui karena situasi tak terduga. Mencari rute lain.");
+        a -= 'A';
+        b -= 'A';
+        adjacencyMatrix[a][b]=0;
+        adjacencyMatrix[b][a]=0;
+        dijkstra(src, dst);
+    }
+        
 public double getMoney(){
     System.out.println("Serta menghabiskan biaya bensin : ");
     return this.money;
