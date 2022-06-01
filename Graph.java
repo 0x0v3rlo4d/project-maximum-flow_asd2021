@@ -106,8 +106,8 @@ public void route (char dst) {
         System.out.println("Oops! Jalan tidak dapat dilalui karena situasi tak terduga. Mencari rute lain.");
         a -= 'A';
         b -= 'A';
-        adjacencyMatrix[a][b]=10000;
-        adjacencyMatrix[b][a]=10000;
+        adjacencyMatrix[a][b]=0;
+        adjacencyMatrix[b][a]=0;
         dijkstra(src, dst);
     }
     private int minIndex(int[] distance, boolean[] fixed){
